@@ -1,0 +1,19 @@
+Installation
+
+
+### 1. Install requirements
+    pip install -r requirements.txt
+
+### 2. Set the FLASK_APP environment variable
+    (Unix) export FLASK_APP=futurenet_interview.py
+
+### 3. Run the application
+    flask run --host=0.0.0.0
+
+### 4. Fetch the image on dockerhub
+
+---- working on it -------
+
+### 5. Go the http://127.0.0.1:5000/
+
+### 6. Create an account and log in

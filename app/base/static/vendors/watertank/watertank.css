@@ -1,0 +1,21 @@
+.watertank:after {
+    background-color: #00FFFF;
+    border: 2px solid #000;
+    content: "";
+    display: block;
+    position: absolute;
+
+}
+.watertank {
+
+    background-color: #00FFFF;
+    border: 2px solid #00FFFF;
+    height: 260px;
+    position: relative;
+}
+.watertank .watertank-level {
+    background-color: #fff;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+}

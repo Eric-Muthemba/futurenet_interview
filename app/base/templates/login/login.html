@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% import "wtf.html" as wtf %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<link href="{{ url_for('static', filename='vendors/signin/signin.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendors/signin/starter-template.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+ <nav class="navbar" role="navigation">
+  				<div class="navbar-header">
+  				</div>
+  		</nav>
+
+		<!-- START SECTION -->
+  		<div class="section hero text-center background-dark dark-bg">
+  			<div class="background-image" style= "background: url('https://i0.wp.com/techmoran.com/wp-content/uploads/2014/05/ecommerce.jpg?fit=900%2C387&ssl=1') no-repeat center center; background-size: cover; opacity: 1;"></div>
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-md-12">
+  						<h2>FUTURENET E-COMMERCE PLATFORM</h2>
+  						<p class="lead">want it we have it</p>
+              <ul class="list-inline">
+
+				  <div>
+
+				          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+							<div id="id01" class="modal">
+
+								<div class="container modal-content animate">
+									<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+								  <form class="form-signin" method="POST" action="/login">
+									        {{ form.hidden_tag() }}
+											{{ wtf.form_field(form.username) }}
+											{{ wtf.form_field(form.password) }}
+											{{ wtf.form_field(form.remember) }}
+									  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+								  </form>
+							  </form>
+							</div>
+				  </div>
+				          <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign up</button>
+
+				 			 <div id="id02" class="modal">
+								 <div class="container modal-content animate">
+									 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+								  <form class="form-signin" method="POST" action="/login">
+									{{ form1.hidden_tag() }}
+									{{ wtf.form_field(form1.username) }}
+									{{ wtf.form_field(form1.email) }}
+									{{ wtf.form_field(form1.password) }}
+									<button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+								  </form>
+								</div>
+				  </div>
+
+
+
+
+
+						<script>
+						// Get the modal
+						var modal = document.getElementById('id01');
+						var modal2 = document.getElementById('id02');
+
+						// When the user clicks anywhere outside of the modal, close it
+						window.onclick = function(event) {
+							if (event.target == modal) {
+								modal.style.display = "none";
+							}
+							if (event.target == modal2) {
+								modal2.style.display = "none";
+							}
+						}
+						</script>
+              </ul>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	  {% endblock %}
